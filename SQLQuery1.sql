@@ -1,0 +1,15 @@
+﻿SELECT DISTINCT TRAINING.*  
+FROM TRAINING  
+INNER JOIN STAFF_TRAINING  
+ON TRAINING.trainingId = STAFF_TRAINING.trainingId          
+WHERE TRAINING.trainingType = trainingType
+AND CONVERT(date, TRAINING.dateOfTraining) = CONVERT(date, TRAINING.dateOfTraining)
+AND TRAINING.duration = duration 
+AND STAFF_TRAINING.staffId = STAFF_TRAINING.staffId
+
+SELECT DISTINCT TRAINING.* FROM TRAINING
+WHERE TRAINING.trainingID NOT IN (SELECT trainingId FROM STAFF_TRAINING)
+AND TRAINING.trainingType = trainingType
+AND CONVERT(date, TRAINING.dateOfTraining) = CONVERT(date, TRAINING.dateOfTraining)
+AND TRAINING.duration = duration 
+

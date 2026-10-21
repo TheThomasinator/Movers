@@ -1,0 +1,1 @@
+﻿Select JOB.jobID, JOB.jobType, JOB.dateOfjob, [ADDRESS].firstLine, [ADDRESS].secondLine, [ADDRESS].secondLine, [ADDRESS].county, [ADDRESS].city FROM JOB INNER JOIN ADDRESS ON JOB.addressID = ADDRESS.addressID
